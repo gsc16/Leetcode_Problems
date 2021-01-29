@@ -1,0 +1,10 @@
+//Problem 176: Second Highest Salary
+//Using sub query
+select ISNULL(max(salary),null) as SecondHighestSalary from Employee where Salary <(select max(salary) from Employee);
+
+//Using Rank
+WITH cte AS
+(SELECT DISTINCT Salary, DENSE_RANK() OVER(ORDER BY Salary DESC) as rk
+ FROM Employee
+)
+SELECT isnull((SELECT Salary FROM cte WHERE rk = 2),null) AS SecondHighestSalary;
