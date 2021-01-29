@@ -1,0 +1,16 @@
+//Problem 53: Maximum subarray sum
+
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int max = Integer.MIN_VALUE, sum_till_cur = 0;
+        for(int i=0; i<nums.length; i++)
+        {
+            sum_till_cur += nums[i];
+            if(max < sum_till_cur)
+                max = sum_till_cur;
+            if(sum_till_cur < 0)
+                sum_till_cur = 0;
+        }
+        return max;
+    }
+}
