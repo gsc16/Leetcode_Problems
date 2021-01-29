@@ -1,0 +1,30 @@
+//Brute Force Solution: Time complexity is n^2
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        for(int i=0; i<nums.length; i++)
+        {
+            for(int j=0; j<nums.length && j!=i; j++)
+            {
+                if(nums[i]+nums[j] == target)
+                    return new int[]{i,j};
+            }
+        }
+        throw new IllegalArgumentException("No Solution Found");
+        
+    }
+}
+//Using HashMap : Time complexity is n
+//If the complement of current value in nums is present in hashmap, return the corresponding value in the hashmap and the current index i. 
+//Else push the current nums value and index i to hashmap.
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        HashMap<Integer,Integer> hm = new HashMap();
+        for(int i=0; i<nums.length; i++)
+        {
+            if(hm.containsKey(target-nums[i]))
+                return new int[]{hm.get(target-nums[i]),i};
+            hm.put(nums[i],i);
+        }
+        throw new IllegalArgumentException("No Solution Found");
+    }
+}
