@@ -1,0 +1,36 @@
+//Problem 155: Min Stack
+
+//Using List and Collections to get min value in O(n)
+
+class MinStack { 
+    /** initialize your data structure here. */
+    List<Integer> ls;
+    public MinStack() {
+        ls = new ArrayList();
+    }
+    
+    public void push(int x) {
+        ls.add(x);
+    }
+    
+    public void pop() {
+        ls.remove(ls.size()-1);
+    }
+    
+    public int top() {
+        return ls.get(ls.size()-1);
+    }
+    
+    public int getMin() {
+        return Collections.min(ls);
+    }
+}
+
+/**
+ * Your MinStack object will be instantiated and called as such:
+ * MinStack obj = new MinStack();
+ * obj.push(x);
+ * obj.pop();
+ * int param_3 = obj.top();
+ * int param_4 = obj.getMin();
+ */
