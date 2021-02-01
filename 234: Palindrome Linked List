@@ -1,0 +1,31 @@
+//Problem 234: Palindrome Linked List
+
+//If the number of elements in linked list is [-128,127], we can use Integer List
+class Solution {
+    public boolean isPalindrome(ListNode head) {
+        if(head==null)
+            return true;
+        ListNode cur = head;
+        int cnt = 0;
+         while(cur != null)
+        {
+            cnt++;
+            cur = cur.next;
+        }
+        cur = head;
+        int[] ls = new int[cnt];
+        int idx = 0;
+        while(cur != null)
+        {
+            ls[idx++] = cur.val;
+            cur = cur.next;
+        }
+        
+        for(int i=0, j=ls.length-1; i<j; i++,j--)
+        {
+            if(ls[i] != ls[j])
+                return false;
+        }
+        return true;
+    }
+}
