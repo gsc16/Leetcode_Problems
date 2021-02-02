@@ -1,0 +1,41 @@
+//Problem 937: Reorder data logs
+
+class Solution {
+    public String[] reorderLogFiles(String[] logs) {
+        List<String> let_log = new ArrayList();
+        List<String> dig_log = new ArrayList();
+        for(String s: logs)
+        {
+            
+            char ch = s.charAt(s.indexOf(" ")+1);
+            if(Character.isDigit(ch)) //it is a digit log
+                dig_log.add(s);
+            else
+                let_log.add(s);  
+        }
+        //Sort letter logs ignoring the first word
+        Comparator<String> comp = new Comparator<String>()
+        {
+            public int compare(String s1, String s2)
+            {
+                int i = s1.indexOf(" ");
+                int j = s2.indexOf(" ");
+                int sort_res = s1.substring(i+1).compareTo(s2.substring(j+1));
+                if(sort_res == 0) //Strings are same ignoring the first word
+                {
+                    sort_res = s1.substring(0,i).compareTo(s2.substring(0,j));
+                }
+                return sort_res;
+            }
+        };
+        Collections.sort(let_log,comp);
+        String[] res = new String[logs.length];
+        int idx=0;
+        for(int i=0; i<let_log.size();i++)
+            res[idx++] = let_log.get(i);
+        for(int i=0; i<dig_log.size();i++)
+            res[idx++] = dig_log.get(i);
+        return res;
+        
+    }
+}
