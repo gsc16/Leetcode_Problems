@@ -1,0 +1,35 @@
+//Problem 1507: Reformat Date
+
+class Solution {
+    public String reformatDate(String date) {
+        if(date.length()==0)
+            return date;
+        StringBuilder sb = new StringBuilder();
+        Map<String,String> hm = new HashMap<>();
+        hm.put("Jan","01");
+        hm.put("Feb","02");
+        hm.put("Mar","03");
+        hm.put("Apr","04");
+        hm.put("May","05");
+        hm.put("Jun","06");
+        hm.put("Jul","07");
+        hm.put("Aug","08");
+        hm.put("Sep","09");
+        hm.put("Oct","10");
+        hm.put("Nov","11");
+        hm.put("Dec","12");
+        String[] word = date.split(" ");
+        sb.append(word[2]);
+        sb.append('-');
+        sb.append(hm.get(word[1]));
+        sb.append('-');
+        if(word[0].length() <4)
+            sb.append('0');
+        for(char ch: word[0].toCharArray())
+        {
+            if(Character.isDigit(ch))
+                sb.append(ch);
+        }
+        return sb.toString();
+    }
+}
