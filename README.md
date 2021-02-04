@@ -1,4 +1,28 @@
 # Leetcode_Problems
+02/04/2020:
+1) Find Pivot Index (724)
+2)String Compression (443)
+
+02/03/2021:
+1) Reformat Date (1507)
+2) Climbing stairs (70)
+3) Uncommon words from 2 strings (884)
+4) Sum of left leaves (404)
+5) Valid Anagram (242)
+
+02/02/2021:
+1) Reorder Data logs (937)
+2) Employees earning more than their manager (181)
+3) Duplicate Emails (182)
+
+02/01/2021:
+1) Palindrome Linked List (234)
+2) Min Stack (155)
+
+01/30/2021:
+1) Fizz Buzz (412)
+2) Valid Palindrome (125)
+
 01/29/2021:
 1) Two sum(1)
 2) Best Time to Buy and Sell Stock(121)
@@ -10,8 +34,3 @@
 8) Merge Two Sorted lists(21)
 9) Reverse Integer (7)
 10) Second highest salary(176)
-
-
-02/04/2020:
-1) Find Pivot Index (724)
-2)String Compression (443)
