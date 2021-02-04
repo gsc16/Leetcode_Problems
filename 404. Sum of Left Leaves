@@ -1,0 +1,18 @@
+//Problem 404: Sum of Left Leaves
+
+class Solution {
+    int sum = 0;
+    public int sumOfLeftLeaves(TreeNode root) {
+        return sumLeft(root,false);
+    }
+    public int sumLeft(TreeNode cur, boolean left)
+    {
+        if(cur == null)
+            return 0;
+        if(left && cur.left== null && cur.right == null)
+            sum += cur.val;
+        sumLeft(cur.left,true);
+        sumLeft(cur.right,false);
+        return sum;
+    }
+}
