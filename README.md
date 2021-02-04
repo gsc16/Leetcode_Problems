@@ -10,3 +10,8 @@
 8) Merge Two Sorted lists(21)
 9) Reverse Integer (7)
 10) Second highest salary(176)
+
+
+02/04/2020:
+1) Find Pivot Index (724)
+2)String Compression (443)
