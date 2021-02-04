@@ -1,0 +1,23 @@
+//Problem 884: Uncommon words from two strings
+
+//Solution using hash map. We can;t use hashset here, because if a word occurs 3 times, it will be there in the hashset finally, but it shouldn't be there in the output
+
+class Solution {
+    public String[] uncommonFromSentences(String A, String B) {
+        Map<String, Integer> hm = new HashMap();
+        for(String s: A.split(" "))
+            hm.put(s,hm.getOrDefault(s,0)+1);
+        for(String s: B.split(" "))
+            hm.put(s,hm.getOrDefault(s,0)+1);
+        StringBuilder sb = new StringBuilder();
+        for(String s: hm.keySet())
+        {
+            if(hm.get(s) == 1)
+                sb.append(s+" ");
+        }
+        if(sb.length()>0)
+            return sb.toString().split(" ");
+        else
+            return new String[0];
+    }
+}
