@@ -1,7 +1,7 @@
 # Leetcode_Problems
 02/04/2020:
 1) Find Pivot Index (724)
-2)String Compression (443)
+2) String Compression (443)
 
 02/03/2021:
 1) Reformat Date (1507)
