@@ -1,0 +1,22 @@
+//Problem 221: Maximal Square
+
+class Solution {
+    public int maximalSquare(char[][] matrix) {
+        int num_rows = matrix.length, num_cols = (num_rows>0) ? matrix[0].length : 0;
+        int[][] dp = new int[num_rows+1][num_cols+1];
+        int max_len = 0;
+        for(int i=1; i<=num_rows; i++)
+        {
+            for(int j=1; j<=num_cols; j++)
+            {
+                if(matrix[i-1][j-1]=='1')
+                {
+                    dp[i][j] = Math.min(Math.min(dp[i-1][j],dp[i][j-1]),dp[i-1][j-1])+1;
+                    max_len = Math.max(max_len, dp[i][j]);
+                }
+                
+            }
+        }
+        return max_len * max_len;
+    }
+}
