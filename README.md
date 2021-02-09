@@ -1,5 +1,8 @@
 # Leetcode_Problems
-02/04/2020:
+02/09/2021:
+1) Maximal Square (221)
+
+02/04/2021:
 1) Find Pivot Index (724)
 2) String Compression (443)
 
