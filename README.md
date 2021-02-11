@@ -1,4 +1,7 @@
 # Leetcode_Problems
+02/10/2021:
+1) Generate Parantheses (22)
+
 02/09/2021:
 1) Maximal Square (221)
 
