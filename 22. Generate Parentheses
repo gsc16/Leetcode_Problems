@@ -1,0 +1,21 @@
+//Problem 22: Generate Parentheses
+
+class Solution {
+    public List<String> generateParenthesis(int n) {
+        List<String> res = new ArrayList();
+        backtrack(res,"",0,0,n);
+        return res;
+    }
+    public void backtrack(List<String> res, String cur, int open, int close, int max)
+    {
+        if(cur.length() == 2*max)
+        {
+            res.add(cur);
+            return;
+        }
+        if(open<max)
+            backtrack(res,cur+"(", open+1, close, max);
+        if(close<open)
+            backtrack(res,cur+")",open,close+1,max);
+    }
+}
